@@ -1,0 +1,52 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <form action="#">
+    <div>
+      <label for="select1">Select simple avec optgroup</label><span class="select">
+        <select id="select1" name="select1">
+          <option>Curium</option>
+          <optgroup label="Stuff">
+            <option>Polonium</option>
+            <option>Neptunim</option>
+          </optgroup>
+        </select></span>
+    </div>
+    <div>
+      <label for="select2">Select simple</label><span class="select">
+        <select id="select2" name="select2">
+          <option>Polonium</option>
+          <option>Curium</option>
+          <option>Neptunim</option>
+        </select></span>
+    </div>
+    <div>
+      <label for="select3">Select multiple</label><span class="select">
+        <select id="select3" name="select3" multiple>
+          <option>Polonium</option>
+          <option>Curium</option>
+          <option>Neptunim</option>
+        </select></span>
+    </div>
+    <div>
+      <label for="select4">Select multiple</label>
+      <select id="select4" name="select4" multiple>
+        <option>Polonium</option>
+        <option>Curium</option>
+        <option>Neptunim</option>
+      </select>
+    </div>
+  </form>
+  <script src="../dist/select.js"></script>
+  <script>
+    Array.prototype.forEach.call( document.querySelectorAll('span.select'), function( el ){
+      el.select = new window.Select( el.querySelector( 'select' ));
+    });
+  </script>
+</body>
+</html>

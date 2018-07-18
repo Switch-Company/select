@@ -1,0 +1,79 @@
+html{
+  box-sizing: border-box;
+}
+
+html *, html *:before, html *:after{
+  box-sizing: inherit;
+}
+
+form{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+  justify-content: space-evenly
+}
+
+label{
+  display: block;
+}
+
+span.select {
+  display: inline-block;
+  position: relative;
+}
+span.select select {
+  display: none;
+}
+span.select button {
+  -webkit-appearance: none;
+  border: 1px solid grey;
+  font-size: 18px;
+  line-height: 1.666666666666667;
+  padding: 4px 40px 4px 20px;
+  text-align: left;
+}
+.keyboard span.select button:focus + [role="listbox"] {
+  border-top-color: grey;
+}
+span.select button > * {
+  display: inline-block;
+}
+span.select [role="listbox"] {
+  background-color: #fff;
+  border: 1px solid grey;
+  list-style: none;
+  margin: 0;
+  margin-top: -1px;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  cursor: default;
+}
+span.select [role="listbox"] .optgroup {
+  margin: 0;
+  padding: 0px;
+  color: #fff;
+  line-height: 2.222222222222222;
+}
+span.select [role="option"] {
+  padding: 0px;
+  line-height: 2.222222222222222;
+}
+span.select [role="option"]:hover, .keyboard span.select [role="option"].active {
+  background-color: grey;
+}
+span.select [role="option"][aria-selected="true"] {
+  position: relative;
+}
+span.select [role="option"][aria-selected="true"]:before {
+  content: '✔︎';
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: 2.222222222222222;
+  padding-right: 10px;
+}
+span.select [aria-hidden="true"] {
+  display: none;
+}
